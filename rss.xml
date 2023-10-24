@@ -10,263 +10,8 @@
         </author>
         <description>摸鱼之道，就在其中</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 23 Oct 2023 01:41:47 +0800</pubDate>
-        <lastBuildDate>Mon, 23 Oct 2023 01:41:47 +0800</lastBuildDate>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/10/23/Linux/docker/docker/4-01Docker/</guid>
-            <title></title>
-            <link>http://example.com/2023/10/23/Linux/docker/docker/4-01Docker/</link>
-            <pubDate>Mon, 23 Oct 2023 01:41:47 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;docker-随堂笔记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker-随堂笔记&#34;&gt;#&lt;/a&gt; Docker - 随堂笔记&lt;/h1&gt;
-&lt;p&gt;学习解决方案：&lt;/p&gt;
-&lt;p&gt;第一种方案：知识点 + 教学项目 + 团队项目&lt;/p&gt;
-&lt;p&gt;SSM+Vue（全家桶）&lt;/p&gt;
-&lt;p&gt;传统项目&lt;/p&gt;
-&lt;p&gt;第二种方案：&lt;/p&gt;
-&lt;p&gt;SpringBoot+Vue（全家桶）&lt;/p&gt;
-&lt;p&gt;主流，前后端分离&lt;/p&gt;
-&lt;p&gt;第三种方案：&lt;/p&gt;
-&lt;p&gt;基于低代码开发平台（第三方成品）二次开发&lt;/p&gt;
-&lt;p&gt;基于 Guns 进行二次开发&lt;/p&gt;
-&lt;p&gt;第四种方案：&lt;/p&gt;
-&lt;p&gt;SpringCloud&lt;/p&gt;
-&lt;p&gt;微服务架构，复杂业务、聚合、并发&lt;/p&gt;
-&lt;p&gt;第一个项目：&lt;/p&gt;
-&lt;p&gt;1. 把近期所学的内容，完成了整合：SSM,Vue 这套&lt;/p&gt;
-&lt;p&gt;2. 学会 Git，多人协作开发&lt;/p&gt;
-&lt;p&gt;3. 解决问题的能力，常见问题&lt;/p&gt;
-&lt;p&gt;4. 淬炼学习能力&lt;/p&gt;
-&lt;p&gt;第二个项目：&lt;/p&gt;
-&lt;p&gt;1. 业务逻辑&lt;/p&gt;
-&lt;p&gt;2. 第三方（需要自主研究）&lt;/p&gt;
-&lt;p&gt;3. 技术栈升级&lt;/p&gt;
-&lt;p&gt;第三个项目：&lt;/p&gt;
-&lt;p&gt;1. 二次开发 --- 效率&lt;/p&gt;
-&lt;h2 id=&#34;一-docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-docker&#34;&gt;#&lt;/a&gt; 一、Docker&lt;/h2&gt;
-&lt;h3 id=&#34;11-docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-docker&#34;&gt;#&lt;/a&gt; 1.1 Docker&lt;/h3&gt;
-&lt;p&gt;Docker 是一个开源的容器引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。&lt;/p&gt;
-&lt;p&gt;容器化引擎，新型虚拟机&lt;/p&gt;
-&lt;p&gt;Docker 使用 Google 公司推出的 Go 语言进行开发实现，属于操作系统层面的虚拟化技术。&lt;/p&gt;
-&lt;p&gt;由于隔离的进程独立于宿主和其它的隔离的进程，因此也称其为容器。&lt;/p&gt;
-&lt;p&gt;用户可以方便地创建和使用容器，把自己的应用放入容器。&lt;/p&gt;
-&lt;p&gt;容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。&lt;/p&gt;
-&lt;p&gt;容器就是将软件打包成标准化单元，以用于开发、交付和部署。&lt;/p&gt;
-&lt;p&gt;容器的镜像是轻量的、可执行的独立软件包 ，包含软件运行所需的所有内容：代码、运行时环境、系统工具、系统库和设置。&lt;/p&gt;
-&lt;h3 id=&#34;12-docker的特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-docker的特点&#34;&gt;#&lt;/a&gt; 1.2 Docker 的特点&lt;/h3&gt;
-&lt;p&gt;轻量，在一台机器上运行的多个 Docker 容器可以共享这台机器的操作系统内核；它们能够迅速启动，只需占用很少的计算和内存资源。镜像是通过文件系统层进行构造的，并共享一些公共文件。这样就能尽量降低磁盘用量，并能更快地下载镜像。&lt;/p&gt;
-&lt;p&gt;标准，Docker 容器基于开放式标准，能够在所有主流 Linux 版本、Microsoft Windows 以及包括 VM、裸机服务器和云在内的任何基础设施上运行。&lt;/p&gt;
-&lt;p&gt;安全，Docker 赋予应用的隔离性不仅限于彼此隔离，还独立于底层的基础设施。Docker 默认提供最强的隔离，因此应用出现问题，也只是单个容器的问题，而不会波及到整台机器。&lt;/p&gt;
-&lt;h3 id=&#34;13-docker的组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-docker的组成&#34;&gt;#&lt;/a&gt; 1.3 Docker 的组成&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303100947243.png&#34; alt=&#34;image-20230310094755104&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;镜像（ Image ）   软件安装包，是一套软件集合，需要的其他的软件都在里面，比如 Tomcat 镜像，就包含 Jdk+tomcat&lt;/p&gt;
-&lt;p&gt;容器（ Container ）基于镜像安装之后的实例&lt;/p&gt;
-&lt;p&gt;数据卷（Data Volumes）容器存储数据的地方，类似磁盘（虚拟的）&lt;/p&gt;
-&lt;p&gt;网络（Network）可以实现容器的网络分配，每个容器都有自己的网络（ip + 端口）&lt;/p&gt;
-&lt;p&gt;仓库（ Repository ）存储镜像的地方，国内建议使用第三方镜像仓库&lt;/p&gt;
-&lt;h3 id=&#34;14-docker安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#14-docker安装&#34;&gt;#&lt;/a&gt; 1.4 Docker 安装&lt;/h3&gt;
-&lt;p&gt;执行命令，先查看是否有 Docker&lt;/p&gt;
-&lt;p&gt;docker --version&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303100952267.png&#34; alt=&#34;image-20230310095223175&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;如果想要删除：yum -y remove docker-ce&lt;/p&gt;
-&lt;p&gt;如果没有需要安装：&lt;/p&gt;
-&lt;p&gt;1. 执行命令，实现 Docker 安装&lt;/p&gt;
-&lt;p&gt;yum install -y yum-utils&lt;/p&gt;
-&lt;p&gt;yum-config-manager --add-repo &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeXVuLmNvbS9kb2NrZXItY2UvbGludXgvY2VudG9zL2RvY2tlci1jZS5yZXBv&#34;&gt;http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;yum makecache fast&lt;/p&gt;
-&lt;p&gt;yum -y install docker-ce&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101001414.png&#34; alt=&#34;image-20230310100129361&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101001317.png&#34; alt=&#34;image-20230310100151294&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;2. 验证&lt;/p&gt;
-&lt;p&gt;docker --version&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101003454.png&#34; alt=&#34;image-20230310100313385&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;3. 启动 Docker&lt;/p&gt;
-&lt;p&gt;启动：systemctl start docker&lt;/p&gt;
-&lt;p&gt;停止：systemctl stop docker&lt;/p&gt;
-&lt;p&gt;查看状态：systemctl status docker&lt;/p&gt;
-&lt;p&gt;重启：systemctl restart docker&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101005820.png&#34; alt=&#34;image-20230310100525763&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;二-docker命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-docker命令&#34;&gt;#&lt;/a&gt; 二、Docker 命令&lt;/h2&gt;
-&lt;h3 id=&#34;21-docker镜像仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-docker镜像仓库&#34;&gt;#&lt;/a&gt; 2.1 Docker 镜像仓库&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101006184.png&#34; alt=&#34;image-20230310100605142&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;需要配置镜像加速器：&lt;/p&gt;
-&lt;p&gt;1. 执行命令，编辑文件&lt;/p&gt;
-&lt;p&gt;vi /etc/docker/daemon.json&lt;/p&gt;
-&lt;p&gt;2. 输入一下内容，并保存退出&lt;/p&gt;
-&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;registry-mirrors&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;https://registry.docker-cn.com&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 执行命令，让配置生效&lt;/p&gt;
-&lt;p&gt;systemctl daemon-reload&lt;br /&gt;
-systemctl restart docker&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101009704.png&#34; alt=&#34;image-20230310100921628&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;22-docker常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-docker常用命令&#34;&gt;#&lt;/a&gt; 2.2 Docker 常用命令&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1. 搜索镜像：docker search&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker search tomcat&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101048640.png&#34; alt=&#34;image-20230310104844611&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 查看本地镜像：docker images&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker images&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101049042.png&#34; alt=&#34;image-20230310104937000&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3. 下载镜像：docker pull&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker pull tomcat&lt;/p&gt;
-&lt;p&gt;docker pull mysql:8.0&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101047385.png&#34; alt=&#34;image-20230310104750289&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101050489.png&#34; alt=&#34;image-20230310105057432&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4. 创建容器：docker create&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker create --name tomcat8081 -p 8081:8080 tomcat&lt;/p&gt;
-&lt;p&gt;参数说明：&lt;/p&gt;
-&lt;p&gt;1.--name 为容器起个名字&lt;/p&gt;
-&lt;p&gt;2.-p 设置端口号 访问端口号：软件本身的端口号&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101054894.png&#34; alt=&#34;image-20230310105418847&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;5. 创建并运行容器：docker run&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker run -d --name tomcat8082 -p 8082:8080 tomcat&lt;/p&gt;
-&lt;p&gt;参数说明：&lt;/p&gt;
-&lt;p&gt;1.-d 后台启动&lt;/p&gt;
-&lt;p&gt;2.--name 为容器起个名字&lt;/p&gt;
-&lt;p&gt;3.-p 设置端口号 访问端口号：软件本身的端口号&lt;/p&gt;
-&lt;p&gt;run 命令：1. 镜像不存在，会自动下载 2. 创建容器 3. 启动容器&lt;/p&gt;
-&lt;p&gt;等价于：pull+create+start 命令组合&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101059021.png&#34; alt=&#34;image-20230310105944985&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;6. 启动容器：docker start&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker start tomcat8081&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101100596.png&#34; alt=&#34;image-20230310110042546&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;7. 停止容器：docker stop&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker stop tomcat8081&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101100467.png&#34; alt=&#34;image-20230310110018425&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;8. 删除容器：docker rm&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker rm tomcat8081&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注意：删除容器，容器必须先停止&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101102238.png&#34; alt=&#34;image-20230310110228205&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;9. 查看容器：docker ps&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker ps -a 查看创建的所有的容器&lt;/p&gt;
-&lt;p&gt;docker ps 查看运行中的容器&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101056623.png&#34; alt=&#34;image-20230310105626567&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;10. 删除镜像：docker rmi&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker rmi tomcat:8.5&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101109031.png&#34; alt=&#34;image-20230310110947965&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;11. 查看容器日志：docker logs&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker logs tomcat8082&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101103616.png&#34; alt=&#34;image-20230310110314580&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;12. 进入到容器内部：docker exec&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker exec -it tomcat8082 bash&lt;/p&gt;
-&lt;p&gt;参数说明：&lt;/p&gt;
-&lt;p&gt;1.-it 交互&lt;/p&gt;
-&lt;p&gt;2.bash 命令&lt;/p&gt;
-&lt;p&gt;退出容器，采用 exit&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101105264.png&#34; alt=&#34;image-20230310110510207&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;13. 查看容器详情：docker inspect&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker inspect tomcat8082&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101107971.png&#34; alt=&#34;image-20230310110749928&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;三-docker命令配置环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-docker命令配置环境&#34;&gt;#&lt;/a&gt; 三、Docker 命令配置环境&lt;/h2&gt;
-&lt;p&gt;按部就班&lt;/p&gt;
-&lt;h3 id=&#34;31-docker配置tomcat&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-docker配置tomcat&#34;&gt;#&lt;/a&gt; 3.1 Docker 配置 Tomcat&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1. 创建文件夹，作为映射文件夹&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/tomcat8081/webapps&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/tomcat8081/logs&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 执行命令，创建 Tomcat 容器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker run -d --name tomcat8081 -p 8081:8080 -v /usr/docker/tomcat8081/webapps:/usr/local/tomcat/webapps -v /usr/docker/tomcat8081/logs:/usr/local/tomcat/logs  tomcat:9.0.33&lt;/p&gt;
-&lt;p&gt;参数说明：&lt;/p&gt;
-&lt;p&gt;1.-d 后台启动&lt;/p&gt;
-&lt;p&gt;2.--name 容器的名称 (唯一)&lt;/p&gt;
-&lt;p&gt;3.-p 映射端口号设置 格式：访问端口号：软件本身端口号&lt;/p&gt;
-&lt;p&gt;4.-v 映射路径设置  格式：真实路径：容器内部的默认路径&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注意：上述的命令是一个命令，不能换行！&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101115501.png&#34; alt=&#34;image-20230310111526443&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3. 访问测试&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;需要在 /usr/docker/tomcat8081/webapps 创建文件夹 ROOT, 同时在 ROOT 里面创建 index.html&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwMS40My4xOTUuNDo4MDgxLw==&#34;&gt;http://101.43.195.4:8081/&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101121046.png&#34; alt=&#34;image-20230310112112990&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;32-docker配置mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-docker配置mysql&#34;&gt;#&lt;/a&gt; 3.2 Docker 配置 Mysql&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1. 创建文件夹&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/mysql3307/conf&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/mysql3307/data&lt;/p&gt;
-&lt;p&gt;同时在 conf 目录下，创建 my.cnf 文件&lt;/p&gt;
-&lt;p&gt;vim /usr/docker/mysql3307/conf/my.cnf&lt;/p&gt;
-&lt;p&gt;输入以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[mysqld]
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
-symbolic-links=0
-log-error=/var/log/mysqld.log
-pid-file=/var/run/mysqld/mysqld.pid
-lower_case_table_names=1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101131458.png&#34; alt=&#34;image-20230310113124410&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 执行命令，创建 Mysql 容器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker run -d --name mysql3307 -p 3307:3306 -v /usr/docker/mysql3307/conf/my.cnf:/etc/mysql/my.cnf -v /usr/docker/mysql3307/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=qfjava  mysql:5.7&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101131559.png&#34; alt=&#34;image-20230310113104518&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3. 连接测试&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101130552.png&#34; alt=&#34;image-20230310113026490&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;33-docker配置redis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-docker配置redis&#34;&gt;#&lt;/a&gt; 3.3 Docker 配置 Redis&lt;/h3&gt;
-&lt;p&gt;1. 创建文件夹&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/redis6379/data&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/redis6379/conf&lt;/p&gt;
-&lt;p&gt;vim /usr/docker/redis6379/conf/redis.conf&lt;/p&gt;
-&lt;p&gt;输入以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;requirepass 123456
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101147744.png&#34; alt=&#34;image-20230310114707692&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;2. 执行命令，创建容器&lt;/p&gt;
-&lt;p&gt;docker run -d --name redis6380 -p 6380:6379  -v /usr/docker/redis6379/conf/redis.conf:/etc/redis/redis.conf -v /usr/docker/redis6379/data:/data  redis:7.0.9 redis-server /etc/redis/redis.conf&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101146621.png&#34; alt=&#34;image-20230310114644564&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;3. 访问测试&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101513112.png&#34; alt=&#34;image-20230310151336038&#34; /&gt;&lt;/p&gt;
-&lt;p data,conf,log=&#34;&#34;&gt;mkdir -p /usr/docker/rabbitmq5673/&lt;/p&gt;
-&lt;p&gt;chmod -R 777 /usr/docker/rabbitmq5673 #   授权&lt;/p&gt;
-&lt;p&gt;docker run -d --name rabbitmq5673-p 15672:15672 -p 5673:5672 rabbitmq:management -v /usr/docker/rabbitmq5673/data:/etc/rabbitmq -v /usr/docker/rabbitmq5673/conf:/etc/rabbitmq&lt;/p&gt;
-&lt;h2 id=&#34;四-docker-compose&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-docker-compose&#34;&gt;#&lt;/a&gt; 四、Docker-Compose&lt;/h2&gt;
-&lt;h3 id=&#34;41-docker-compose&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-docker-compose&#34;&gt;#&lt;/a&gt; 4.1 Docker-Compose&lt;/h3&gt;
-&lt;p&gt;Docker-Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，可以使用 YML 文件来配置应用程序需要的所有容器。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有容器。&lt;/p&gt;
-&lt;p&gt;Compose 使用的三个步骤：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用 Dockerfile 定义应用程序的环境。&lt;/li&gt;
-&lt;li&gt;使用 docker-compose.yml 定义构成应用程序的服务，这样它们就可以在隔离环境中一起运行。&lt;/li&gt;
-&lt;li&gt;最后，执行 docker-compose up 命令来启动并运行整个应用程序。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;容器编排技术，可以一次性创建多个容器，通过自定义 yml 文件&lt;/p&gt;
-&lt;p&gt;比如 Docker-Compose 更高级的是 K8s（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2t1YmVybmV0ZXMucDJocC5jb20vJUVGJUJDJTg5&#34;&gt;http://kubernetes.p2hp.com/）&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;42-docker-compose作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-docker-compose作用&#34;&gt;#&lt;/a&gt; 4.2 Docker-Compose 作用&lt;/h3&gt;
-&lt;p&gt;可以通过一定语法格式，定义要创建的容器的 yml 文件，然后通过 up 命令，解析 yml 文件，最终可以创建多个容器&lt;/p&gt;
-&lt;p&gt;Docker-Compose 的 yml 文件的语法格式：&lt;/p&gt;
-&lt;p&gt;yml 文件使用 key: value 方式来指定配置信息 ，key: value 冒号后面必须有个空格&lt;/p&gt;
-&lt;p&gt;配置信息通过缩进表示层级关系，缩进使用的是两个空格，不是制表符&lt;/p&gt;
-&lt;h3 id=&#34;43-docker-compose安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#43-docker-compose安装&#34;&gt;#&lt;/a&gt; 4.3 Docker-Compose 安装&lt;/h3&gt;
-&lt;p&gt;1. 下载&lt;/p&gt;
-&lt;p&gt;curl -L &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nZXQuZGFvY2xvdWQuaW8vZG9ja2VyL2NvbXBvc2UvcmVsZWFzZXMvZG93bmxvYWQvMS4yNi4yL2RvY2tlci1jb21wb3NlLSU2MHVuYW1l&#34;&gt;https://get.daocloud.io/docker/compose/releases/download/1.26.2/docker-compose-`uname&lt;/span&gt; -s &lt;code&gt;-&lt;/code&gt; uname -m` &amp;gt; /usr/local/bin/docker-compose&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101451285.png&#34; alt=&#34;image-20230310145114231&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;2. 设置权限&lt;/p&gt;
-&lt;p&gt;chmod 777 /usr/local/bin/docker-compose&lt;/p&gt;
-&lt;p&gt;3. 验证&lt;/p&gt;
-&lt;p&gt;docker-compose -version&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101452965.png&#34; alt=&#34;image-20230310145203934&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;五-docker-compose配置环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-docker-compose配置环境&#34;&gt;#&lt;/a&gt; 五、Docker-Compose 配置环境&lt;/h2&gt;
-&lt;h3 id=&#34;51-docker-compose配置tomcat&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-docker-compose配置tomcat&#34;&gt;#&lt;/a&gt; 5.1 Docker-Compose 配置 Tomcat&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1. 准备文件夹&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/tomcat8801/webapps&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/tomcat8802/webapps&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/tomcat8803/webapps&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. 创建 yml 文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;vim /usr/local/tomcat3.yml&lt;/p&gt;
-&lt;p&gt;内容如下所示：&lt;/p&gt;
-&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3.1&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8801&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8801&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8801/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8802&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8802&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8802/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8803&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8803&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8803/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;3. 执行创建对应的容器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;docker-compose -f /usr/local/tomcat3.yml   up  -d&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101502058.png&#34; alt=&#34;image-20230310150210015&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4. 访问测试&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在对应的 webapps 创建文件夹 ROOT, 在 test 创建 index.html 文件&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwMS40My4xOTUuNDo4ODAx&#34;&gt;http://101.43.195.4:8801&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202306061027011.png&#34; alt=&#34;image-20230606102736949&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;51-docker-compose配置mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-docker-compose配置mysql&#34;&gt;#&lt;/a&gt; 5.1 Docker-Compose 配置 Mysql&lt;/h3&gt;
-&lt;p&gt;1. 创建文件夹&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/mysql3308/conf&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/mysql3309/conf&lt;/p&gt;
-&lt;p&gt;mkdir -p /usr/docker/mysql3310/conf&lt;/p&gt;
-&lt;p&gt;以此类推创建对应的 my.cnf 文件&lt;/p&gt;
-&lt;p&gt;2. 创建对应的 yml 文件&lt;/p&gt;
-&lt;p&gt;vim /usr/local/mysql3.yml&lt;/p&gt;
-&lt;p&gt;内容如下所示：&lt;/p&gt;
-&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3.1&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3308  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3308&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3308/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3309  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3309&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3309/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3310  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3310&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3310/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 执行命令，创建容器&lt;/p&gt;
-&lt;p&gt;docker-compose -f /usr/local/mysql3.yml   up  -d&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101509818.png&#34; alt=&#34;image-20230310150959767&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;4. 连接测试&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202306061031081.png&#34; alt=&#34;image-20230606103139012&#34; /&gt;&lt;/p&gt;
- ]]></description>
-        </item>
+        <pubDate>Mon, 23 Oct 2023 01:40:23 +0800</pubDate>
+        <lastBuildDate>Mon, 23 Oct 2023 01:40:23 +0800</lastBuildDate>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/23/Linux/docker/vue3%E9%80%9F%E6%88%9010.17/Vue3%E9%80%9F%E6%88%90/</guid>
             <title></title>
@@ -675,6 +420,23 @@ const set1 = () =&amp;gt; &amp;#123;
 &lt;h2 id=&#34;5-vant组件库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-vant组件库&#34;&gt;#&lt;/a&gt; 5、Vant 组件库&lt;/h2&gt;
 &lt;h2 id=&#34;6-axios&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-axios&#34;&gt;#&lt;/a&gt; 6、Axios&lt;/h2&gt;
 &lt;h2 id=&#34;7-综合案例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-综合案例&#34;&gt;#&lt;/a&gt; 7、综合案例&lt;/h2&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
+            <title>hi biya</title>
+            <link>http://example.com/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+            <category term="docker" scheme="http://example.com/categories/docker/" />
+            <category term="Linux" scheme="http://example.com/categories/docker/Linux/" />
+            <category term="RabbitMQ" scheme="http://example.com/tags/RabbitMQ/" />
+            <category term="Linux" scheme="http://example.com/tags/Linux/" />
+            <pubDate>Sun, 22 Oct 2023 00:09:40 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;hello world&lt;br /&gt;
+ 人生就是折腾，让自己忙起来&lt;br /&gt;
+花开堪折直须折，莫待无花空折枝&lt;br /&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;通过-git-clone-命令将主题下载到-theme-目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通过-git-clone-命令将主题下载到-theme-目录&#34;&gt;#&lt;/a&gt; 通过 git clone 命令将主题下载到 theme 目录&lt;/h1&gt;
+&lt;p&gt;git clone &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL21paWlrdS9oZXhvLXRoZW1lLWZsZXhibG9jay5naXQ=&#34;&gt;https://github.com/miiiku/hexo-theme-flexblock.git&lt;/span&gt; ./themes/flexblock&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -1103,20 +865,261 @@ public class HelloTask &amp;#123;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
-            <title>hi biya</title>
-            <link>http://example.com/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+            <guid isPermalink="true">http://example.com/2023/10/22/Linux/docker/docker/4-01Docker/</guid>
+            <title>docker</title>
+            <link>http://example.com/2023/10/22/Linux/docker/docker/4-01Docker/</link>
             <category term="docker" scheme="http://example.com/categories/docker/" />
             <category term="Linux" scheme="http://example.com/categories/docker/Linux/" />
-            <category term="RabbitMQ" scheme="http://example.com/tags/RabbitMQ/" />
-            <category term="Linux" scheme="http://example.com/tags/Linux/" />
+            <category term="docker" scheme="http://example.com/tags/docker/" />
             <pubDate>Sun, 22 Oct 2023 00:09:40 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;hello world&lt;br /&gt;
- 人生就是折腾，让自己忙起来&lt;br /&gt;
-花开堪折直须折，莫待无花空折枝&lt;br /&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&#34;通过-git-clone-命令将主题下载到-theme-目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通过-git-clone-命令将主题下载到-theme-目录&#34;&gt;#&lt;/a&gt; 通过 git clone 命令将主题下载到 theme 目录&lt;/h1&gt;
-&lt;p&gt;git clone &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL21paWlrdS9oZXhvLXRoZW1lLWZsZXhibG9jay5naXQ=&#34;&gt;https://github.com/miiiku/hexo-theme-flexblock.git&lt;/span&gt; ./themes/flexblock&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;docker-随堂笔记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker-随堂笔记&#34;&gt;#&lt;/a&gt; Docker - 随堂笔记&lt;/h1&gt;
+&lt;p&gt;学习解决方案：&lt;/p&gt;
+&lt;p&gt;第一种方案：知识点 + 教学项目 + 团队项目&lt;/p&gt;
+&lt;p&gt;SSM+Vue（全家桶）&lt;/p&gt;
+&lt;p&gt;传统项目&lt;/p&gt;
+&lt;p&gt;第二种方案：&lt;/p&gt;
+&lt;p&gt;SpringBoot+Vue（全家桶）&lt;/p&gt;
+&lt;p&gt;主流，前后端分离&lt;/p&gt;
+&lt;p&gt;第三种方案：&lt;/p&gt;
+&lt;p&gt;基于低代码开发平台（第三方成品）二次开发&lt;/p&gt;
+&lt;p&gt;基于 Guns 进行二次开发&lt;/p&gt;
+&lt;p&gt;第四种方案：&lt;/p&gt;
+&lt;p&gt;SpringCloud&lt;/p&gt;
+&lt;p&gt;微服务架构，复杂业务、聚合、并发&lt;/p&gt;
+&lt;p&gt;第一个项目：&lt;/p&gt;
+&lt;p&gt;1. 把近期所学的内容，完成了整合：SSM,Vue 这套&lt;/p&gt;
+&lt;p&gt;2. 学会 Git，多人协作开发&lt;/p&gt;
+&lt;p&gt;3. 解决问题的能力，常见问题&lt;/p&gt;
+&lt;p&gt;4. 淬炼学习能力&lt;/p&gt;
+&lt;p&gt;第二个项目：&lt;/p&gt;
+&lt;p&gt;1. 业务逻辑&lt;/p&gt;
+&lt;p&gt;2. 第三方（需要自主研究）&lt;/p&gt;
+&lt;p&gt;3. 技术栈升级&lt;/p&gt;
+&lt;p&gt;第三个项目：&lt;/p&gt;
+&lt;p&gt;1. 二次开发 --- 效率&lt;/p&gt;
+&lt;h2 id=&#34;一-docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-docker&#34;&gt;#&lt;/a&gt; 一、Docker&lt;/h2&gt;
+&lt;h3 id=&#34;11-docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-docker&#34;&gt;#&lt;/a&gt; 1.1 Docker&lt;/h3&gt;
+&lt;p&gt;Docker 是一个开源的容器引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。&lt;/p&gt;
+&lt;p&gt;容器化引擎，新型虚拟机&lt;/p&gt;
+&lt;p&gt;Docker 使用 Google 公司推出的 Go 语言进行开发实现，属于操作系统层面的虚拟化技术。&lt;/p&gt;
+&lt;p&gt;由于隔离的进程独立于宿主和其它的隔离的进程，因此也称其为容器。&lt;/p&gt;
+&lt;p&gt;用户可以方便地创建和使用容器，把自己的应用放入容器。&lt;/p&gt;
+&lt;p&gt;容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。&lt;/p&gt;
+&lt;p&gt;容器就是将软件打包成标准化单元，以用于开发、交付和部署。&lt;/p&gt;
+&lt;p&gt;容器的镜像是轻量的、可执行的独立软件包 ，包含软件运行所需的所有内容：代码、运行时环境、系统工具、系统库和设置。&lt;/p&gt;
+&lt;h3 id=&#34;12-docker的特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-docker的特点&#34;&gt;#&lt;/a&gt; 1.2 Docker 的特点&lt;/h3&gt;
+&lt;p&gt;轻量，在一台机器上运行的多个 Docker 容器可以共享这台机器的操作系统内核；它们能够迅速启动，只需占用很少的计算和内存资源。镜像是通过文件系统层进行构造的，并共享一些公共文件。这样就能尽量降低磁盘用量，并能更快地下载镜像。&lt;/p&gt;
+&lt;p&gt;标准，Docker 容器基于开放式标准，能够在所有主流 Linux 版本、Microsoft Windows 以及包括 VM、裸机服务器和云在内的任何基础设施上运行。&lt;/p&gt;
+&lt;p&gt;安全，Docker 赋予应用的隔离性不仅限于彼此隔离，还独立于底层的基础设施。Docker 默认提供最强的隔离，因此应用出现问题，也只是单个容器的问题，而不会波及到整台机器。&lt;/p&gt;
+&lt;h3 id=&#34;13-docker的组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-docker的组成&#34;&gt;#&lt;/a&gt; 1.3 Docker 的组成&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303100947243.png&#34; alt=&#34;image-20230310094755104&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;镜像（ Image ）   软件安装包，是一套软件集合，需要的其他的软件都在里面，比如 Tomcat 镜像，就包含 Jdk+tomcat&lt;/p&gt;
+&lt;p&gt;容器（ Container ）基于镜像安装之后的实例&lt;/p&gt;
+&lt;p&gt;数据卷（Data Volumes）容器存储数据的地方，类似磁盘（虚拟的）&lt;/p&gt;
+&lt;p&gt;网络（Network）可以实现容器的网络分配，每个容器都有自己的网络（ip + 端口）&lt;/p&gt;
+&lt;p&gt;仓库（ Repository ）存储镜像的地方，国内建议使用第三方镜像仓库&lt;/p&gt;
+&lt;h3 id=&#34;14-docker安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#14-docker安装&#34;&gt;#&lt;/a&gt; 1.4 Docker 安装&lt;/h3&gt;
+&lt;p&gt;执行命令，先查看是否有 Docker&lt;/p&gt;
+&lt;p&gt;docker --version&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303100952267.png&#34; alt=&#34;image-20230310095223175&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果想要删除：yum -y remove docker-ce&lt;/p&gt;
+&lt;p&gt;如果没有需要安装：&lt;/p&gt;
+&lt;p&gt;1. 执行命令，实现 Docker 安装&lt;/p&gt;
+&lt;p&gt;yum install -y yum-utils&lt;/p&gt;
+&lt;p&gt;yum-config-manager --add-repo &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeXVuLmNvbS9kb2NrZXItY2UvbGludXgvY2VudG9zL2RvY2tlci1jZS5yZXBv&#34;&gt;http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;yum makecache fast&lt;/p&gt;
+&lt;p&gt;yum -y install docker-ce&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101001414.png&#34; alt=&#34;image-20230310100129361&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101001317.png&#34; alt=&#34;image-20230310100151294&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2. 验证&lt;/p&gt;
+&lt;p&gt;docker --version&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101003454.png&#34; alt=&#34;image-20230310100313385&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;3. 启动 Docker&lt;/p&gt;
+&lt;p&gt;启动：systemctl start docker&lt;/p&gt;
+&lt;p&gt;停止：systemctl stop docker&lt;/p&gt;
+&lt;p&gt;查看状态：systemctl status docker&lt;/p&gt;
+&lt;p&gt;重启：systemctl restart docker&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101005820.png&#34; alt=&#34;image-20230310100525763&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二-docker命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-docker命令&#34;&gt;#&lt;/a&gt; 二、Docker 命令&lt;/h2&gt;
+&lt;h3 id=&#34;21-docker镜像仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-docker镜像仓库&#34;&gt;#&lt;/a&gt; 2.1 Docker 镜像仓库&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101006184.png&#34; alt=&#34;image-20230310100605142&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;需要配置镜像加速器：&lt;/p&gt;
+&lt;p&gt;1. 执行命令，编辑文件&lt;/p&gt;
+&lt;p&gt;vi /etc/docker/daemon.json&lt;/p&gt;
+&lt;p&gt;2. 输入一下内容，并保存退出&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;registry-mirrors&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;https://registry.docker-cn.com&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 执行命令，让配置生效&lt;/p&gt;
+&lt;p&gt;systemctl daemon-reload&lt;br /&gt;
+systemctl restart docker&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101009704.png&#34; alt=&#34;image-20230310100921628&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;22-docker常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-docker常用命令&#34;&gt;#&lt;/a&gt; 2.2 Docker 常用命令&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 搜索镜像：docker search&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker search tomcat&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101048640.png&#34; alt=&#34;image-20230310104844611&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 查看本地镜像：docker images&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker images&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101049042.png&#34; alt=&#34;image-20230310104937000&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 下载镜像：docker pull&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker pull tomcat&lt;/p&gt;
+&lt;p&gt;docker pull mysql:8.0&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101047385.png&#34; alt=&#34;image-20230310104750289&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101050489.png&#34; alt=&#34;image-20230310105057432&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 创建容器：docker create&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker create --name tomcat8081 -p 8081:8080 tomcat&lt;/p&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;p&gt;1.--name 为容器起个名字&lt;/p&gt;
+&lt;p&gt;2.-p 设置端口号 访问端口号：软件本身的端口号&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101054894.png&#34; alt=&#34;image-20230310105418847&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. 创建并运行容器：docker run&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker run -d --name tomcat8082 -p 8082:8080 tomcat&lt;/p&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;p&gt;1.-d 后台启动&lt;/p&gt;
+&lt;p&gt;2.--name 为容器起个名字&lt;/p&gt;
+&lt;p&gt;3.-p 设置端口号 访问端口号：软件本身的端口号&lt;/p&gt;
+&lt;p&gt;run 命令：1. 镜像不存在，会自动下载 2. 创建容器 3. 启动容器&lt;/p&gt;
+&lt;p&gt;等价于：pull+create+start 命令组合&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101059021.png&#34; alt=&#34;image-20230310105944985&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6. 启动容器：docker start&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker start tomcat8081&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101100596.png&#34; alt=&#34;image-20230310110042546&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7. 停止容器：docker stop&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker stop tomcat8081&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101100467.png&#34; alt=&#34;image-20230310110018425&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8. 删除容器：docker rm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker rm tomcat8081&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意：删除容器，容器必须先停止&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101102238.png&#34; alt=&#34;image-20230310110228205&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9. 查看容器：docker ps&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker ps -a 查看创建的所有的容器&lt;/p&gt;
+&lt;p&gt;docker ps 查看运行中的容器&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101056623.png&#34; alt=&#34;image-20230310105626567&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10. 删除镜像：docker rmi&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker rmi tomcat:8.5&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101109031.png&#34; alt=&#34;image-20230310110947965&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;11. 查看容器日志：docker logs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker logs tomcat8082&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101103616.png&#34; alt=&#34;image-20230310110314580&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12. 进入到容器内部：docker exec&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker exec -it tomcat8082 bash&lt;/p&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;p&gt;1.-it 交互&lt;/p&gt;
+&lt;p&gt;2.bash 命令&lt;/p&gt;
+&lt;p&gt;退出容器，采用 exit&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101105264.png&#34; alt=&#34;image-20230310110510207&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13. 查看容器详情：docker inspect&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker inspect tomcat8082&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101107971.png&#34; alt=&#34;image-20230310110749928&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三-docker命令配置环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-docker命令配置环境&#34;&gt;#&lt;/a&gt; 三、Docker 命令配置环境&lt;/h2&gt;
+&lt;p&gt;按部就班&lt;/p&gt;
+&lt;h3 id=&#34;31-docker配置tomcat&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-docker配置tomcat&#34;&gt;#&lt;/a&gt; 3.1 Docker 配置 Tomcat&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 创建文件夹，作为映射文件夹&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/tomcat8081/webapps&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/tomcat8081/logs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 执行命令，创建 Tomcat 容器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker run -d --name tomcat8081 -p 8081:8080 -v /usr/docker/tomcat8081/webapps:/usr/local/tomcat/webapps -v /usr/docker/tomcat8081/logs:/usr/local/tomcat/logs  tomcat:9.0.33&lt;/p&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;p&gt;1.-d 后台启动&lt;/p&gt;
+&lt;p&gt;2.--name 容器的名称 (唯一)&lt;/p&gt;
+&lt;p&gt;3.-p 映射端口号设置 格式：访问端口号：软件本身端口号&lt;/p&gt;
+&lt;p&gt;4.-v 映射路径设置  格式：真实路径：容器内部的默认路径&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意：上述的命令是一个命令，不能换行！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101115501.png&#34; alt=&#34;image-20230310111526443&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 访问测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;需要在 /usr/docker/tomcat8081/webapps 创建文件夹 ROOT, 同时在 ROOT 里面创建 index.html&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwMS40My4xOTUuNDo4MDgxLw==&#34;&gt;http://101.43.195.4:8081/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101121046.png&#34; alt=&#34;image-20230310112112990&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-docker配置mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-docker配置mysql&#34;&gt;#&lt;/a&gt; 3.2 Docker 配置 Mysql&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 创建文件夹&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/mysql3307/conf&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/mysql3307/data&lt;/p&gt;
+&lt;p&gt;同时在 conf 目录下，创建 my.cnf 文件&lt;/p&gt;
+&lt;p&gt;vim /usr/docker/mysql3307/conf/my.cnf&lt;/p&gt;
+&lt;p&gt;输入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+symbolic-links=0
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+lower_case_table_names=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101131458.png&#34; alt=&#34;image-20230310113124410&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 执行命令，创建 Mysql 容器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker run -d --name mysql3307 -p 3307:3306 -v /usr/docker/mysql3307/conf/my.cnf:/etc/mysql/my.cnf -v /usr/docker/mysql3307/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=qfjava  mysql:5.7&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101131559.png&#34; alt=&#34;image-20230310113104518&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 连接测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101130552.png&#34; alt=&#34;image-20230310113026490&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;33-docker配置redis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-docker配置redis&#34;&gt;#&lt;/a&gt; 3.3 Docker 配置 Redis&lt;/h3&gt;
+&lt;p&gt;1. 创建文件夹&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/redis6379/data&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/redis6379/conf&lt;/p&gt;
+&lt;p&gt;vim /usr/docker/redis6379/conf/redis.conf&lt;/p&gt;
+&lt;p&gt;输入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;requirepass 123456
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101147744.png&#34; alt=&#34;image-20230310114707692&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2. 执行命令，创建容器&lt;/p&gt;
+&lt;p&gt;docker run -d --name redis6380 -p 6380:6379  -v /usr/docker/redis6379/conf/redis.conf:/etc/redis/redis.conf -v /usr/docker/redis6379/data:/data  redis:7.0.9 redis-server /etc/redis/redis.conf&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101146621.png&#34; alt=&#34;image-20230310114644564&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;3. 访问测试&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101513112.png&#34; alt=&#34;image-20230310151336038&#34; /&gt;&lt;/p&gt;
+&lt;p data,conf,log=&#34;&#34;&gt;mkdir -p /usr/docker/rabbitmq5673/&lt;/p&gt;
+&lt;p&gt;chmod -R 777 /usr/docker/rabbitmq5673 #   授权&lt;/p&gt;
+&lt;p&gt;docker run -d --name rabbitmq5673-p 15672:15672 -p 5673:5672 rabbitmq:management -v /usr/docker/rabbitmq5673/data:/etc/rabbitmq -v /usr/docker/rabbitmq5673/conf:/etc/rabbitmq&lt;/p&gt;
+&lt;h2 id=&#34;四-docker-compose&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-docker-compose&#34;&gt;#&lt;/a&gt; 四、Docker-Compose&lt;/h2&gt;
+&lt;h3 id=&#34;41-docker-compose&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-docker-compose&#34;&gt;#&lt;/a&gt; 4.1 Docker-Compose&lt;/h3&gt;
+&lt;p&gt;Docker-Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，可以使用 YML 文件来配置应用程序需要的所有容器。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有容器。&lt;/p&gt;
+&lt;p&gt;Compose 使用的三个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Dockerfile 定义应用程序的环境。&lt;/li&gt;
+&lt;li&gt;使用 docker-compose.yml 定义构成应用程序的服务，这样它们就可以在隔离环境中一起运行。&lt;/li&gt;
+&lt;li&gt;最后，执行 docker-compose up 命令来启动并运行整个应用程序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容器编排技术，可以一次性创建多个容器，通过自定义 yml 文件&lt;/p&gt;
+&lt;p&gt;比如 Docker-Compose 更高级的是 K8s（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2t1YmVybmV0ZXMucDJocC5jb20vJUVGJUJDJTg5&#34;&gt;http://kubernetes.p2hp.com/）&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;42-docker-compose作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-docker-compose作用&#34;&gt;#&lt;/a&gt; 4.2 Docker-Compose 作用&lt;/h3&gt;
+&lt;p&gt;可以通过一定语法格式，定义要创建的容器的 yml 文件，然后通过 up 命令，解析 yml 文件，最终可以创建多个容器&lt;/p&gt;
+&lt;p&gt;Docker-Compose 的 yml 文件的语法格式：&lt;/p&gt;
+&lt;p&gt;yml 文件使用 key: value 方式来指定配置信息 ，key: value 冒号后面必须有个空格&lt;/p&gt;
+&lt;p&gt;配置信息通过缩进表示层级关系，缩进使用的是两个空格，不是制表符&lt;/p&gt;
+&lt;h3 id=&#34;43-docker-compose安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#43-docker-compose安装&#34;&gt;#&lt;/a&gt; 4.3 Docker-Compose 安装&lt;/h3&gt;
+&lt;p&gt;1. 下载&lt;/p&gt;
+&lt;p&gt;curl -L &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nZXQuZGFvY2xvdWQuaW8vZG9ja2VyL2NvbXBvc2UvcmVsZWFzZXMvZG93bmxvYWQvMS4yNi4yL2RvY2tlci1jb21wb3NlLSU2MHVuYW1l&#34;&gt;https://get.daocloud.io/docker/compose/releases/download/1.26.2/docker-compose-`uname&lt;/span&gt; -s &lt;code&gt;-&lt;/code&gt; uname -m` &amp;gt; /usr/local/bin/docker-compose&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101451285.png&#34; alt=&#34;image-20230310145114231&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2. 设置权限&lt;/p&gt;
+&lt;p&gt;chmod 777 /usr/local/bin/docker-compose&lt;/p&gt;
+&lt;p&gt;3. 验证&lt;/p&gt;
+&lt;p&gt;docker-compose -version&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101452965.png&#34; alt=&#34;image-20230310145203934&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;五-docker-compose配置环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-docker-compose配置环境&#34;&gt;#&lt;/a&gt; 五、Docker-Compose 配置环境&lt;/h2&gt;
+&lt;h3 id=&#34;51-docker-compose配置tomcat&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-docker-compose配置tomcat&#34;&gt;#&lt;/a&gt; 5.1 Docker-Compose 配置 Tomcat&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 准备文件夹&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/tomcat8801/webapps&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/tomcat8802/webapps&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/tomcat8803/webapps&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 创建 yml 文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;vim /usr/local/tomcat3.yml&lt;/p&gt;
+&lt;p&gt;内容如下所示：&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3.1&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8801&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8801&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8801/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8802&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8802&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8802/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;tomcat3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;9.0.33&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; tomcat8803&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 8803&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8080&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/tomcat8803/webapps&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/usr/local/tomcat/webapps&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;3. 执行创建对应的容器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker-compose -f /usr/local/tomcat3.yml   up  -d&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101502058.png&#34; alt=&#34;image-20230310150210015&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 访问测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在对应的 webapps 创建文件夹 ROOT, 在 test 创建 index.html 文件&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwMS40My4xOTUuNDo4ODAx&#34;&gt;http://101.43.195.4:8801&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202306061027011.png&#34; alt=&#34;image-20230606102736949&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;51-docker-compose配置mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-docker-compose配置mysql&#34;&gt;#&lt;/a&gt; 5.1 Docker-Compose 配置 Mysql&lt;/h3&gt;
+&lt;p&gt;1. 创建文件夹&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/mysql3308/conf&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/mysql3309/conf&lt;/p&gt;
+&lt;p&gt;mkdir -p /usr/docker/mysql3310/conf&lt;/p&gt;
+&lt;p&gt;以此类推创建对应的 my.cnf 文件&lt;/p&gt;
+&lt;p&gt;2. 创建对应的 yml 文件&lt;/p&gt;
+&lt;p&gt;vim /usr/local/mysql3.yml&lt;/p&gt;
+&lt;p&gt;内容如下所示：&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3.1&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3308  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3308&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3308/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3309  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3309&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3309/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;mysql3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;# 服务的名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; always   &lt;span class=&#34;token comment&#34;&gt;# 代表只要 docker 启动，那么这个容器就跟着一起启动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5.7&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;# 指定镜像路径&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; mysql3310  &lt;span class=&#34;token comment&#34;&gt;# 指定容器名称&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; 3310&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3306&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;#  指定端口号的映射&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; root   &lt;span class=&#34;token comment&#34;&gt;# 指定 MySQL 的 ROOT 用户登录密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;TZ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Asia/Shanghai        &lt;span class=&#34;token comment&#34;&gt;# 指定时区&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; /usr/docker/mysql3310/conf/my.cnf&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;/etc/mysql/my.cnf    &lt;span class=&#34;token comment&#34;&gt;# 映射数据卷&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 执行命令，创建容器&lt;/p&gt;
+&lt;p&gt;docker-compose -f /usr/local/mysql3.yml   up  -d&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202303101509818.png&#34; alt=&#34;image-20230310150959767&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;4. 连接测试&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://codingsir.oss-cn-hangzhou.aliyuncs.com/202306061031081.png&#34; alt=&#34;image-20230606103139012&#34; /&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>

@@ -1,0 +1,254 @@
+<!-- build time: Tue Oct 24 2023 17:10:19 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"><meta name="renderer" content="webkit"><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><meta name="msvalidate.01" content="1234"><link rel="alternate" href="/rss.xml" title="夢のない賢魚です" type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="夢のない賢魚です" type="application/atom+xml"><link rel="alternate" type="application/json" title="夢のない賢魚です" href="http://example.com/feed.json"><link rel="preconnect" href="https://lf9-cdn-tos.bytecdntp.com"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://unpkg.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.3.6"><script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.js"></script><meta name="keywords" content="RabbitMQ,"><link rel="canonical" href="http://example.com/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/"><title>RabbitMQ</title><meta name="generator" content="Hexo 6.3.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">RabbitMQ</h1><div class="meta"><span class="item" title="创建时间：2023-10-22 00:09:40"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2023-10-22T00:09:40+08:00">2023-10-22</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>12k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>11 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Ya Hallo</a></li></ul><ul class="right" id="rightNav"><li class="item theme" @click="changeThemeByBtn"><i class="ic" :class="{'i-sun': !themeStatus,'i-moon': themeStatus}"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><ul><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemlistelement itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span><i class="ic i-angle-right"></i><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/docker/" itemprop="item" rel="index" title="分类于docker"><span itemprop="name">docker<meta itemprop="position" content="0"></span></a></span><i class="ic i-angle-right"></i><span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/docker/Linux/" itemprop="item" rel="index" title="分类于Linux"><span itemprop="name">Linux<meta itemprop="position" content="1"></span></a></span></div><article class="post block" itemscope itemtype="http://schema.org/Article" lang="zh-CN"><link itemprop="mainEntityOfPage" href="http://example.com/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.jpg"><meta itemprop="name" content="biya"><meta itemprop="description" content="biya, 摸鱼之道，就在其中"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="夢のない賢魚です"></span><div class="body md" itemprop="articleBody"><p>RabbitMQ</p><p>学会一下内容：</p><p>1. 学会专业知识</p><p>​	各种知识点：涵盖整个开发领域</p><p>2. 学会适合自己的学习方式</p><p>​	学习</p><p>3. 学会解决问题</p><p>​	debug、定位、分析</p><p>4. 学会开发</p><p>​	理解需求、学会沟通</p><p>SpringCloud Alibaba</p><p>注册中心：nacos 作用：管理服务，实现服务的注册与发现 使用：注解 @EnableDiscoveryClient + 配置 (application)</p><p>配置中心：nacos 作用： 管理配置，实现配置的动态化管理，可以不用更改代码，实现不停机更新 使用：注解 @RefreshScope + 配置 (Nacos 配置管理 新建配置 Data ID 服务名一样)+ 配置 (Bootstrap)</p><p>远程调用：OpenFeign 作用：调用服务，实现服务间通信 使用：注解 @EnableFeignClients+@FeignClient</p><p>网关中心：gateway 作用：网关，实现服务的聚合统一接口，对请求过滤 使用：配置 + 接口 GlobalFilter</p><p>流量控制：Sentinel 作用：流控和熔断降级，流控就是流量控制，防止高并发导致服务器压力过大，熔断降级就是对核心方法的一种保护，如果核心方法出现问题可以立即响应保证可用性 使用：配置 (Sentinel 可视化 流控、熔断)</p><p>链路跟踪：Sleuth+Zipkin 作用：实现微服务下一次请求的完成过程的日志记录，实现服务间的调用关系 使用：配置</p><h2 id="一-mq"><a class="anchor" href="#一-mq">#</a> 一、MQ</h2><h3 id="11-mq"><a class="anchor" href="#11-mq">#</a> 1.1 MQ</h3><h3 id="12-rabbitmq"><a class="anchor" href="#12-rabbitmq">#</a> 1.2 RabbitMQ</h3><p>都可以使用这个服务器：</p><p>110.40.192.129</p><p>端口号：可视化页面：15672 代码中 5672</p><p>账号：guest</p><p>密码：guest</p><h3 id="13-初体验"><a class="anchor" href="#13-初体验">#</a> 1.3 初体验</h3><p>1. 依赖 jar</p><figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">&lt;!--        RabbitMQ --></span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>2. 实现配置</p><figure class="highlight yaml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token key atrule">spring</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token key atrule">host</span><span class="token punctuation">:</span> 110.40.192.129</pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5672</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token key atrule">username</span><span class="token punctuation">:</span> guest</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token key atrule">password</span><span class="token punctuation">:</span> guest</pre></td></tr></table></figure><p>3. 编写代码</p><p>​	创建队列</p><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token annotation punctuation">@Configuration</span> <span class="token comment">// 配置 类似 beans 标签</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMQConfig</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token comment">// 创建队列</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token annotation punctuation">@Bean</span> <span class="token comment">// IOC bean 标签</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">public</span> <span class="token class-name">Queue</span> <span class="token function">createQ1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token string">"j2310-lx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>​	消息发送</p><pre><code class="language-Java">@RestController
+public class MqSendController &#123;
+    @Resource
+    private RabbitTemplate template;
+
+    @GetMapping(&quot;send1&quot;)
+    public String send1(String msg)&#123;
+        //发送消息
+        template.convertAndSend(&quot;&quot;,&quot;j2310-lx&quot;,msg);
+        return &quot;OK&quot;;
+    &#125;
+&#125;
+</code></pre><p>​	消息接收</p><pre><code class="language-Java">@Slf4j
+@Component //IOC
+public class MsgListener &#123;
+    @RabbitListener(queues = &quot;j2310-lx&quot;)
+    public void hander(String msg)&#123;
+        log.info(&quot;消费者获取消息&#123;&#125;&quot;,msg);
+    &#125;
+&#125;
+</code></pre><p>4. 运行测试</p><p><img data-src="/RabbitMQ.assets/image-20231013114715480.png" alt="image-20231013114715480"></p><p><img data-src="RabbitMQ.assets/image-20231013114726677.png" alt="image-20231013114726677"></p><h2 id="二-rabbitmq核心"><a class="anchor" href="#二-rabbitmq核心">#</a> 二、RabbitMQ 核心</h2><h3 id="21-消息模式-简单消息"><a class="anchor" href="#21-消息模式-简单消息">#</a> 2.1 消息模式 - 简单消息</h3><p>简单消息：</p><p>特点：一个队列对应一个消费端，一个消息只能被消费 1 次</p><p><img data-src="/RabbitMQ.assets/image-20231013141827735.png" alt="image-20231013141827735"></p><p>示例：</p><p>1. 定义队列</p><p>2. 发送消息 --- 到 --- 队列中</p><p>3. 监听消息 --- 从 --- 队列中</p><p>代码：</p><pre><code class="language-Java">//简单消息
+@Bean // IOC bean标签
+public Queue createQ2()&#123;
+    return new Queue(&quot;lx-p2p-1&quot;);
+&#125;
+
+@Resource
+private RabbitTemplate template;
+@GetMapping(&quot;send2&quot;)
+public String send2(String msg)&#123;
+        //发送消息
+        template.convertAndSend(&quot;&quot;,&quot;lx-p2p-1&quot;,msg);
+        return &quot;OK&quot;;
+&#125;
+ 
+    @RabbitListener(queues = &quot;lx-p2p-1&quot;)
+    public void hander2(String msg)&#123;
+        log.info(&quot;普通消息，消费者，获取消息，&#123;&#125;&quot;,msg);
+    &#125;
+</code></pre><h3 id="22-消息模式-work消息"><a class="anchor" href="#22-消息模式-work消息">#</a> 2.2 消息模式 - Work 消息</h3><p>Work 消息：一个队列可以有多个消费端，1 个消息只能消费 1 次，多个消费者是按照轮询的形式轮流获取消息</p><p>可以解决：消息堆积（发的快，消费的慢）</p><p><img data-src="RabbitMQ.assets/image-20231013141853817.png" alt="image-20231013141853817"></p><p>示例：</p><pre><code class="language-Java">//Work消息
+@Bean // IOC bean标签
+public Queue createQ3()&#123;
+    return new Queue(&quot;lx-work-1&quot;);
+&#125;
+
+@Resource
+    private RabbitTemplate template;
+    @GetMapping(&quot;send3&quot;)
+    public String send3(String msg)&#123;
+        //发送消息
+        template.convertAndSend(&quot;&quot;,&quot;lx-work-1&quot;,msg);
+        return &quot;OK&quot;;
+    &#125;
+@RabbitListener(queues = &quot;lx-work-1&quot;)
+    public void hander3(String msg)&#123;
+        log.info(&quot;Work消息，消费者01，获取消息：&#123;&#125;&quot;,msg);
+    &#125;
+    @RabbitListener(queues = &quot;lx-work-1&quot;)
+    public void hander4(String msg)&#123;
+        log.info(&quot;Work消息，消费者02，获取消息：&#123;&#125;&quot;,msg);
+    &#125;
+</code></pre><h3 id="23消息模式-发布订阅"><a class="anchor" href="#23消息模式-发布订阅">#</a> 2.3. 消息模式 - 发布订阅</h3><p>发布订阅：就是消息发送到 Exchange (交换器)，交换器再把消息发送到交换器绑定的队列上，1 个消息可以给多个消费者（多个队列中）获取</p><p>Exchange: 交换器，是 RabbitMQ 一个组成，可以接收消息，然后根据交换器的类型，选择对应的匹配模式，把匹配到的消息转发到对应的队列中。</p><p>交换器的类型：</p><p>1.fanout 直接转发，不对消息做匹配处理</p><p>2.direct 路由匹配，发送消息指定 RoutingKey (精确)，交换器绑定队列的时候，也需要指定 RoutingKey</p><p>3.topic 路由匹配，发送消息指定 RoutingKey (模糊，支持 * #)，交换器绑定队列的时候，也需要指定 RoutingKey，* 一个单词 #任意个单词</p><p>4.header 消息头匹配模式，发送消息的时候指定消息的请求消息头，交换器绑定队列的时候，也需要指定对应的请求消息头，any 任意一个 all 所有</p><p><img data-src="/RabbitMQ.assets/image-20231013141938699.png" alt="image-20231013141938699"></p><p>示例：</p><p>1. 创建队列</p><p>2. 创建交换器</p><p>3. 创建交换器和队列的绑定</p><p>4. 发送消息</p><p>5. 监听消息</p><p>代码：</p><pre><code class="language-Java">@Configuration
+public class FanoutConfig &#123;
+    //1创建队列
+    @Bean
+    public Queue createQfanout1()&#123;
+        return new Queue(&quot;q-fanout-01&quot;);
+    &#125;
+    @Bean
+    public Queue createQfanout2()&#123;
+        return new Queue(&quot;q-fanout-02&quot;);
+    &#125;
+    //2.创建交换器
+    @Bean
+    public FanoutExchange createFe()&#123;
+        return new FanoutExchange(&quot;ex-fanout-lx&quot;);
+    &#125;
+    //3.实现绑定
+    @Bean
+    public Binding createBf1(FanoutExchange fe)&#123;
+        return  BindingBuilder.bind(createQfanout1()).to(fe);
+    &#125;
+    @Bean
+    public Binding createBf2(FanoutExchange fe)&#123;
+        return  BindingBuilder.bind(createQfanout2()).to(fe);
+    &#125;
+&#125;
+</code></pre><pre><code class="language-Java">@RestController
+public class FanoutController &#123;
+    @Resource
+    private RabbitTemplate template;
+
+    @GetMapping(&quot;fanout1&quot;)
+    public String f1(String msg)&#123;
+        template.convertAndSend(&quot;ex-fanout-lx&quot;,&quot;&quot;,msg);
+        return &quot;ok&quot;;
+    &#125;
+&#125;
+</code></pre><pre><code class="language-Java">@RabbitListener(queues = &quot;q-fanout-01&quot;)
+public void hander5(String msg)&#123;
+    log.info(&quot;fanout消息，01队列，消费者，获取消息：&#123;&#125;&quot;,msg);
+&#125;
+@RabbitListener(queues = &quot;q-fanout-02&quot;)
+public void hander6(String msg)&#123;
+    log.info(&quot;fanout消息，02队列，消费者02，获取消息：&#123;&#125;&quot;,msg);
+&#125;
+</code></pre><p><img data-src="RabbitMQ.assets/image-20231013150514443.png" alt="image-20231013150514443"></p><h3 id="24-消息模式-路由匹配"><a class="anchor" href="#24-消息模式-路由匹配">#</a> 2.4 消息模式 - 路由匹配</h3><p>路由消息：消息被发送到交换器，交换器的类型为 direct，可以根据消息的路由关键字进行匹配，转发到匹配的所有的队列</p><p>RoutingKey: 路由关键字，只支持精确的值</p><p><img data-src="RabbitMQ.assets/image-20231013142052195.png" alt="image-20231013142052195"></p><p>示例：</p><p>1. 创建队列</p><p>2. 创建交换器 direct</p><p>3. 创建交换器和队列的绑定 指定 RK</p><p>4. 发送消息 指定 RK</p><p>5. 监听消息</p><p>代码：</p><pre><code class="language-Java">@Configuration
+public class DirectConfig &#123;
+    //1创建队列
+    @Bean
+    public Queue createQdirect1()&#123;
+        return new Queue(&quot;q-direct-01&quot;);
+    &#125;
+    @Bean
+    public Queue createQdirect2()&#123;
+        return new Queue(&quot;q-direct-02&quot;);
+    &#125;
+    @Bean
+    public Queue createQdirect3()&#123;
+        return new Queue(&quot;q-direct-03&quot;);
+    &#125;
+    //2.创建交换器
+    @Bean
+    public DirectExchange createDe()&#123;
+        return new DirectExchange(&quot;ex-direct-lx&quot;);
+    &#125;
+    //3.实现绑定
+    @Bean
+    public Binding createBd1(DirectExchange fe)&#123;
+        return  BindingBuilder.bind(createQdirect1()).to(fe).with(&quot;error&quot;);
+    &#125;
+    @Bean
+    public Binding createBd2(DirectExchange fe)&#123;
+        return  BindingBuilder.bind(createQdirect2()).to(fe).with(&quot;info&quot;);
+    &#125;
+    @Bean
+    public Binding createBd3(DirectExchange fe)&#123;
+        return  BindingBuilder.bind(createQdirect3()).to(fe).with(&quot;info&quot;);
+    &#125;
+
+&#125;
+</code></pre><pre><code class="language-Java">@GetMapping(&quot;direct1&quot;)
+public String d1(String msg,String type)&#123;
+    template.convertAndSend(&quot;ex-direct-lx&quot;,type,msg);
+    return &quot;ok&quot;;
+&#125;
+</code></pre><p><img data-src="RabbitMQ.assets/image-20231013162331523.png" alt="image-20231013162331523"></p><h3 id="25-消息模式-主题消息"><a class="anchor" href="#25-消息模式-主题消息">#</a> 2.5 消息模式 - 主题消息</h3><p>主题消息，就是交换器的类型为 Topic, 跟路由模式的消息一样，都是通过 RoutingKey 匹配队列</p><p>区别：</p><p>主题消息 的 RK 支持模糊</p><p>特殊符号： 区分单词是通过。区分的</p><p>* 一个单词，单词内容任意</p><p>#任意个单词，单词内容任意</p><p><img data-src="RabbitMQ.assets/image-20231013142127724.png" alt="image-20231013142127724"></p><p>示例：</p><p>1. 创建队列</p><p>2. 创建交换器 topic</p><p>3. 创建交换器和队列的绑定 指定 RK (支持模糊)</p><p>4. 发送消息 指定 RK</p><p>5. 监听消息</p><pre><code class="language-Java">@Configuration
+public class TopicConfig &#123;
+    //1创建队列
+    @Bean
+    public Queue createQtopic1()&#123;
+        return new Queue(&quot;q-topic-01&quot;);
+    &#125;
+    @Bean
+    public Queue createQtopic2()&#123;
+        return new Queue(&quot;q-topic-02&quot;);
+    &#125;
+    //2.创建交换器
+    @Bean
+    public TopicExchange createTe()&#123;
+        return new TopicExchange(&quot;ex-topic-lx&quot;);
+    &#125;
+    //3.实现绑定
+    @Bean
+    public Binding createBt1(TopicExchange fe)&#123;
+        //* 一个单词
+        return  BindingBuilder.bind(createQtopic1()).to(fe).with(&quot;error.*&quot;);
+    &#125;
+    @Bean
+    public Binding createBt2(TopicExchange fe)&#123;
+        //# 任意个单词 0-多个
+        return  BindingBuilder.bind(createQtopic2()).to(fe).with(&quot;info.#&quot;);
+    &#125;
+&#125;
+</code></pre><pre><code class="language-Java">@RestController
+public class TopicController &#123;
+    @Resource
+    private RabbitTemplate template;
+
+    @GetMapping(&quot;topic1&quot;)
+    public String f1(String msg,String rk)&#123;
+        template.convertAndSend(&quot;ex-topic-lx&quot;,rk,msg);
+        return &quot;ok&quot;;
+    &#125;
+&#125;
+</code></pre><p><img data-src="RabbitMQ.assets/image-20231013164017687.png" alt="image-20231013164017687"></p><h3 id="26-死信延迟消息"><a class="anchor" href="#26-死信延迟消息">#</a> 2.6 死信 + 延迟消息</h3><p>死信：RabbitMQ 的队列中的消息，满足以下条件任意其一，就会成为死信消息</p><p>​ 1. 消息被拒绝</p><p>​ 2. 消息过期</p><p>​ 3. 队列已满</p><p>死信交换器：专门用来转发队列中的死信消息，将死信消息转发到指定的队列中</p><p>我们可以通过死信 + 死信交换器实现延迟消息处理</p><p>RabbitMQ 实现延迟消息处理🈶2 种方式：</p><p>1. 死信 + 死信交换器 代码实现</p><p>2. 延迟消息插件</p><p>RabbitMQ 基于死信和死信交换器实现延迟：</p><p>&lt;img src=&quot;RabbitMQ.assets/image-20231016113011364.png&quot; alt=&quot;image-20231016113011364&quot; style=&quot;zoom:67%;&quot; /&gt;</p><p>1. 定义需要的队列、交换器、绑定</p><pre><code class="language-Java">@Configuration
+public class RabbitMQConfig &#123;
+    //1.创建2个队列
+    @Bean
+    public Queue createQ1()&#123;
+        //1.设置队列 内部消息有效期 设置死信交换器 设置RK
+        Map&lt;String,Object&gt; params=new HashMap&lt;&gt;();
+        //设置队列中每个消息的有效期 单位 毫秒
+        params.put(&quot;x-message-ttl&quot;,3000);
+        //设置对应的死信交换器
+        params.put(&quot;x-dead-letter-exchange&quot;,&quot;dead-ex-lx&quot;);
+        //设置交换器匹配的路由名称
+        params.put(&quot;x-dead-letter-routing-key&quot;,&quot;test&quot;);
+        return QueueBuilder.durable(&quot;dl-q01&quot;).withArguments(params).build();
+    &#125;
+    @Bean
+    public Queue createQ2()&#123;
+        return new Queue(&quot;dl-q02&quot;);
+    &#125;
+    //2.创建1个交换器（1.fanout 2.direct 3.topic 4.header）-死信交换器direct类型
+    @Bean
+    public DirectExchange createDe()&#123;
+        return new DirectExchange(&quot;dead-ex-lx&quot;);
+    &#125;
+    //3.创建1个绑定
+    @Bean
+    public Binding createBd1(DirectExchange de)&#123;
+        return BindingBuilder.bind(createQ2()).to(de).with(&quot;test&quot;);
+    &#125;
+&#125;
+</code></pre><p>2. 发送消息 消息给到第一个队列</p><pre><code class="language-Java">@RestController
+@RequestMapping(&quot;/api/mq/&quot;)
+public class DeadController &#123;
+    @Resource
+    private RabbitTemplate template;
+
+    @GetMapping(&quot;send&quot;)
+    public String sendDead(String msg)&#123;
+        System.err.println(&quot;发送消息，&quot;+msg+&quot;，发送时间：&quot;+System.currentTimeMillis());
+        template.convertAndSend(&quot;&quot;,&quot;dl-q01&quot;,msg);
+        return &quot;OK&quot;;
+    &#125;
+&#125;
+</code></pre><p>3. 监听消息 消费 监听第二个队列</p><pre><code class="language-Java">@Component
+public class DeadListener &#123;
+
+    @RabbitListener(queues = &quot;dl-q02&quot;)
+    public void hanlder(String m)&#123;
+        System.err.println(&quot;延迟消息，&quot;+m+&quot;，接收时间：&quot;+System.currentTimeMillis());
+    &#125;
+&#125;
+</code></pre><p>4. 运行测试</p><p><img data-src="/RabbitMQ.assets/image-20231016112942920.png" alt="image-20231016112942920"></p><h2 id="扩展"><a class="anchor" href="#扩展">#</a> 扩展</h2><h3 id="1任务调度框架"><a class="anchor" href="#1任务调度框架">#</a> 1. 任务调度框架</h3><p>Java 中如何实现定时任务？</p><p>比如：</p><p>1. 每天早上 6 点定时执行</p><p>2. 每月最后一个工作日，考勤统计</p><p>3. 每个月 25 号信用卡还款</p><p>4. 会员生日祝福</p><p>5. 每隔 3 秒，自动提醒</p><p>我们可以通过任务调度框架实现上述的需求</p><p>任务调度框架：可以实现定时任务，实现间隔多少时间的重复执行，实现指定日期的重复执行</p><p>Java 中任务调度框架：</p><p>1.Spring Task</p><p>2.Quartz</p><p>3.XXL-Job</p><p>4. 第三云平台：阿里云 - SchedulerX 等等</p><p>选择一个：Spring Task（Spring Scheduled）</p><p>2 个注解 + 1 个表达式</p><p>使用步骤：</p><p>1. 开关类 使用注解</p><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token annotation punctuation">@SpringBootApplication</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token annotation punctuation">@EnableScheduling</span> <span class="token comment">// 开启任务调度</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringTask01Application</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">SpringTask01Application</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>2. 定义任务 - 重复执行</p><pre><code class="language-Java">@Component
+public class HelloTask &#123;
+    //定时任务，需要重复执行的方法，并设置触发的规则
+    //每隔3秒，重复执行
+    //CRON表达式 就是设置定时任务的时间关系的特殊的字符串
+    //语法格式：秒 分 时 日 月 星期几 年 其中，只有年可以省略
+    @Scheduled(cron = &quot;0/3 * * * * ?&quot;)
+    public void task1()&#123;
+        System.err.println(&quot;每隔3秒，查看同桌状态！&quot;+System.currentTimeMillis());
+    &#125;
+&#125;
+</code></pre><p>3. 运行查看效果</p><p><img data-src="RabbitMQ.assets/image-20231016101548712.png" alt="image-20231016101548712"></p><p>CRON 表达式：特殊字符串，主要用来描述时间的，用于任务调度等</p><p><img data-src="RabbitMQ.assets/image-20231016102801441.png" alt="image-20231016102801441"></p><p>每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</p><blockquote><p>（1）* ：表示匹配该域的任意值。假如在 Minutes 域使用 *，即表示每分钟都会触发事件。</p><p>（2）?：只能用在 DayofMonth 和 DayofWeek 两个域。它也匹配域的任意值，但实际不会。因为 DayofMonth 和 DayofWeek 会相互影响。</p><p>例如：想在每月的 20 日触发调度，不管 20 日到底是星期几，则只能使用如下写法： 13 13 15 20 * ?，其中最后一位只能用？，而不能使用 *，如果使用 * 表示不管星期几都会触发，实际上并不是这样。</p><p>（3）-：表示范围。例如在 Minutes 域使用 5-20，表示从 5 分到 20 分钟每分钟触发一次</p><p>（4）/：表示起始时间开始触发，然后每隔固定时间触发一次。例如在 Minutes 域使用 5/20，则意味着 5 分钟触发一次，而 25，45 等分别触发一次.。</p><p>（5）,：表示列出枚举值。例如：在 Minutes 域使用 5,20，则意味着在 5 和 20 分每分钟触发一次。</p><p>（6）L：表示最后，只能出现在 DayofWeek 和 DayofMonth 域。如果在 DayofWeek 域使用 5L，意味着在最后的一个星期四触发。</p><p>（7）W：表示有效工作日 (周一到周五)，只能出现在 DayofMonth 域，系统将在离指定日期的最近的有效工作日触发事件。</p><p>例如：在 DayofMonth 使用 5W，如果 5 日是星期六，则将在最近的工作日：星期五，即 4 日触发。如果 5 日是星期天，则在 6 日 (周一) 触发；如果 5 日在星期一到星期五中的一天，则就在 5 日触发。另外一点，W 的最近寻找不会跨过月份 。</p><p>（8）LW：这两个字符可以连用，表示在某个月最后一个工作日。</p><p>（9）#：用于确定每个月第几个星期几，只能出现在 DayofWeek 域。例如在 4#2，表示某月的第二个星期三。</p></blockquote><p><span class="exturl" data-url="aHR0cHM6Ly9jcm9uLnFxZTIuY29tLw==">https://cron.qqe2.com/</span></p><p><img data-src="RabbitMQ.assets/image-20231016103550581.png" alt="image-20231016103550581"></p><div class="tags"><a href="/tags/RabbitMQ/" rel="tag"><i class="ic i-tag"></i>RabbitMQ</a><a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i>Linux</a></div></div><footer><div class="meta"><span class="icon"><i class="ic i-eye"></i></span><span>此文章已被阅读次数:</span><span class="waline-pageview-count" id="twikoo_visitors" data-path="2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/">正在加载...</span><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于</span><time title="修改时间：2023-10-23 01:50:06" itemprop="dateModified" datetime="2023-10-23T01:50:06+08:00">2023-10-23</time></span><script type="module" data-pjax="data-pjax">import { pageviewCount } from 'https://unpkg.com/@waline/client/dist/pageview.mjs';
+
+const path = document.getElementById("twikoo_visitors").getAttribute("data-path");
+pageviewCount({
+    serverURL: 'waline-biya.vercel.app',
+    path: path,
+});</script></div><div class="reward"><button><i class="ic i-heartbeat"></i>赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img data-src="/assets/wechatpay.png" alt="biya 微信支付"><p>微信支付</p></div><div><img data-src="/assets/alipay.png" alt="biya 支付宝"><p>支付宝</p></div><div><img data-src="/assets/paypal.png" alt="biya 贝宝"><p>贝宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>biya<i class="ic i-at"><em>@</em></i>夢のない賢魚です</li><li class="link"><strong>本文链接：</strong><a href="http://example.com/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/" title="RabbitMQ">http://example.com/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh5u05ej20zk0m87df.jpg" title="hi biya"><span class="type">上一篇</span><span class="category"><i class="ic i-flag"></i>Linux</span><h3>hi biya</h3></a></div><div class="item right"><a href="/2023/10/23/Linux/docker/vue3%E9%80%9F%E6%88%9010.17/Vue3%E9%80%9F%E6%88%90/" rel="next" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuv80yoj20zk0m8kjl.jpg" title="未命名"><span class="type">下一篇</span><h3>未命名</h3></a></div></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-mq"><span class="toc-number">1.</span> <span class="toc-text">一、MQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-mq"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 MQ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-rabbitmq"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 RabbitMQ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 初体验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-rabbitmq%E6%A0%B8%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text">二、RabbitMQ 核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E6%B6%88%E6%81%AF%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E6%B6%88%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 消息模式 - 简单消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%B6%88%E6%81%AF%E6%A8%A1%E5%BC%8F-work%E6%B6%88%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 消息模式 - Work 消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23%E6%B6%88%E6%81%AF%E6%A8%A1%E5%BC%8F-%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85"><span class="toc-number">2.3.</span> <span class="toc-text">2.3. 消息模式 - 发布订阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E6%B6%88%E6%81%AF%E6%A8%A1%E5%BC%8F-%E8%B7%AF%E7%94%B1%E5%8C%B9%E9%85%8D"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 消息模式 - 路由匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%B6%88%E6%81%AF%E6%A8%A1%E5%BC%8F-%E4%B8%BB%E9%A2%98%E6%B6%88%E6%81%AF"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 消息模式 - 主题消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-%E6%AD%BB%E4%BF%A1%E5%BB%B6%E8%BF%9F%E6%B6%88%E6%81%AF"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 死信 + 延迟消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-number">3.</span> <span class="toc-text">扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6"><span class="toc-number">3.1.</span> <span class="toc-text">1. 任务调度框架</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li class="active"><a href="/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/" rel="bookmark" title="RabbitMQ">RabbitMQ</a></li><li><a href="/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="bookmark" title="hi biya">hi biya</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="biya" data-src="/assets/avatar.jpg"><p class="name" itemprop="name">biya</p><div class="description" itemprop="description">摸鱼之道，就在其中</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">5</span><span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">2</span><span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">2</span><span class="name">标签</span></a></div></nav><div class="social"><a href="https://github.com/name" class="item github" rel="noopener" title="https:&#x2F;&#x2F;github.com&#x2F;name" target="_blank"><i class="ic i-github"></i></a><a href="https://www.zhihu.com/people/xin-han-91-91" class="item zhihu" rel="noopener" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xin-han-91-91" target="_blank"><i class="ic i-zhihu"></i></a><a href="https://music.163.com/#/user/home?id=1657896798" class="item music" rel="noopener" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1657896798" target="_blank"><i class="ic i-cloud-music"></i></a><a href="https://about.me/biyahan" class="item about" rel="noopener" title="https:&#x2F;&#x2F;about.me&#x2F;biyahan" target="_blank"><i class="ic i-address-card"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-user"></i>关于</a><ul class="submenu"><li class="item"><a href="/about/" rel="section"><i class="ic i-user"></i>关于本站</a></li><li class="item"><a href="/admiration/" rel="section"><i class="ic i-coffee"></i>赞赏博主</a></li></ul></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"><a href="/2023/10/23/Linux/docker/vue3%E9%80%9F%E6%88%9010.17/Vue3%E9%80%9F%E6%88%90/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"></div><span><a href="/2023/10/23/Linux/docker/vue3%E9%80%9F%E6%88%9010.17/Vue3%E9%80%9F%E6%88%90/">未命名</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/10/21/hello-world/">Hello World</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/docker/" title="分类于docker">docker</a><i class="ic i-angle-right"></i><a href="/categories/docker/Linux/" title="分类于Linux">Linux</a></div><span><a href="/2023/10/22/computer-science/cpp/course-1/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">hi biya</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/10/23/Linux/docker/docker/4-01Docker/">未命名</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/docker/" title="分类于docker">docker</a><i class="ic i-angle-right"></i><a href="/categories/docker/Linux/" title="分类于Linux">Linux</a></div><span><a href="/2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/">RabbitMQ</a></span></li></ul></div><div class="rpost pjax"><h2>最新评论</h2><ul class="leancloud-recent-comment" id="new-comment"></ul></div></div><div class="status"><div class="copyright"><span itemprop="copyrightYear">2023</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">biya @ Ya Hallo</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">38k 字</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">35 分钟</span></div><div class="powered-by">基于 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & Theme.<a href="https://github.com/theme-shoka-x/hexo-theme-shokaX/" rel="noopener" target="_blank">ShokaX</a></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"2023/10/22/Linux/docker/RabbitMQ/RabbitMQ/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,chart:!1,copy_tex:!1,katex:!1,mermaid:!1,audio:["https://music.163.com/song?id=1387098940"],fancybox:!0,nocopy:!1,outime:!0,template:'<div class="note warning"><p><span class="label warning">文章时效性提示</span><br>这是一篇发布于 {{publish}} 天前，最后一次更新在 {{updated}} 天前的文章，部分信息可能已经发生改变，请注意甄别。</p></div>',quiz:{choice:"单选题",multiple:"多选题",true_false:"判断题",essay:"问答题",gap_fill:"填空题",mistake:"错题备注"},ignores:[e=>e.includes("#"),e=>new RegExp(LOCAL.path+"$").test(e),[]]}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=default,fetch"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/pace/1.0.2/pace.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/algoliasearch/4.12.1/algoliasearch-lite.umd.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/instantsearch.js/4.39.0/instantsearch.production.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/quicklink/2.2.0/quicklink.umd.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/??jquery/3.5.1/jquery.min.js,fancybox/3.5.7/jquery.fancybox.min.js,justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" async></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/KaTeX/0.15.2/contrib/copy-tex.min.js" async></script><script src="/js/app.js?v=0.3.6"></script><script data-pjax="data-pjax">var _hmt=_hmt||[];!function(){var e=document.createElement("script"),t=(e.src="https://hm.baidu.com/hm.js?true",e.async=!0,document.getElementsByTagName("script")[0]);t.parentNode.insertBefore(e,t)}()</script><script>!function(t,e,n,c,r,a){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},(r=e.createElement(c)).async=1,r.src="https://www.clarity.ms/tag/true",(a=e.getElementsByTagName(c)[0]).parentNode.insertBefore(r,a)}(window,document,"clarity","script")</script><script async src="https://www.googletagmanager.com/gtag/js?id=true"></script><script data-pjax="data-pjax">function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","true")</script></body></html><!-- rebuild by hexo-renderer-multi-next-markdown-it -->

@@ -1203,7 +1203,7 @@ public class HelloTask &amp;#123;
     </entry>
     <entry>
         <id>https://sbysg.github.io/2023/10/22/frontend/vue/vue3/Vue3%E9%80%9F%E6%88%90/</id>
-        <title>mybatis-pllus</title>
+        <title>vue3</title>
         <link rel="alternate" href="https://sbysg.github.io/2023/10/22/frontend/vue/vue3/Vue3%E9%80%9F%E6%88%90/"/>
         <content type="html">&lt;h1 id=&#34;vue3速成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vue3速成&#34;&gt;#&lt;/a&gt; Vue3 速成&lt;/h1&gt;
 &lt;h2 id=&#34;0-vue2-vs-vue3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#0-vue2-vs-vue3&#34;&gt;#&lt;/a&gt; 0、Vue2 VS Vue3&lt;/h2&gt;
@@ -1611,7 +1611,7 @@ const set1 = () =&amp;gt; &amp;#123;
 </content>
         <category term="前端" scheme="https://sbysg.github.io/categories/frontend/" />
         <category term="Vue" scheme="https://sbysg.github.io/categories/frontend/vue/" />
-        <category term="mybatis-pllus" scheme="https://sbysg.github.io/tags/mybatis-pllus/" />
+        <category term="vue3" scheme="https://sbysg.github.io/tags/vue3/" />
         <updated>2023-10-21T16:09:40.000Z</updated>
     </entry>
     <entry>
